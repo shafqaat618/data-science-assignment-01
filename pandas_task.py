@@ -13,3 +13,11 @@ print('\nMean marks per section:\n', dfOrbit.groupby('Section')['Marks'].mean())
 dfOrbit['Grade'] = dfOrbit['Marks'].apply(lambda m: 'A' if m >= 80 else ('B' if m >= 60 else 'C'))
 print('\nWith Grade:\n', dfOrbit)
 print('\nSorted by marks:\n', dfOrbit.sort_values('Marks', ascending=False))
+
+
+
+# Remove duplicate records
+dfOrbit = dfOrbit.drop_duplicates()
+
+print("\nCleaned DataFrame:")
+print(dfOrbit)
